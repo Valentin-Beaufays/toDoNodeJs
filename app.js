@@ -21,7 +21,7 @@ app.use(cookieSession({
     res.render('todo.ejs',{todolist:req.session.todo});
 })
 .post('/add', urlEncodedParser, function(req,res){
-    let cleanItem = sanitizeHtml(req.body.item);
+    let cleanItem = sanitizeHtml(req.body.item).trim();
     if(cleanItem != ''){//verifier input
         req.session.todo.push(cleanItem);
     }
@@ -40,5 +40,5 @@ app.use(cookieSession({
     res.redirect('/');
 });
 
-app.listen(8080);
+app.listen(80);
 
