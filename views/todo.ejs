@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <div class="content">
+        <div class="showTodo">
+            <ul>
+                <% todolist.forEach(function(todo, index) { %>
+                    <li class="todoItem"><a href="/delete/<%= index %>">X</a> <%= todo %></li>
+                <% }); %>
+            </ul>
+        </div>
+        
+    </div>
+        <form action="/add" method="post">
+            <input type="text" name="item" value="">
+            <input type="submit" name="input" value="input">
+        </form>
+    </body>
+</html>
