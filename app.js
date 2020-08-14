@@ -1,7 +1,7 @@
 let express = require('express');
 let cookieSession = require('cookie-session');
 let sanitizeHtml = require('sanitize-html');
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 80
 
 let urlEncodedParser = express.urlencoded({extended: false});
 
@@ -18,11 +18,12 @@ app.use(cookieSession({
     next();
 })
 .get('/', function(req, res){
+    console.log(req.session.todo);
     res.render('todo.ejs',{todolist:req.session.todo});
 })
 .post('/add', urlEncodedParser, function(req,res){
     let cleanItem = sanitizeHtml(req.body.item).trim();
-    if(cleanItem != ''){//verifier input
+    if(cleanItem != ''){
         req.session.todo.push(cleanItem);
     }
     console.log(req.session.todo);
