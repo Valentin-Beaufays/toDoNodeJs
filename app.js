@@ -41,5 +41,7 @@ app.use(cookieSession({
     res.redirect('/');
 });
 
+console.log("server started on port: " + PORT);
+
 app.listen(PORT);
 
