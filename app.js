@@ -1,10 +1,9 @@
 let express = require('express');
 let cookieSession = require('cookie-session');
-let bodyParser = require('body-parser');
 let sanitizeHtml = require('sanitize-html');
 const PORT = process.env.PORT || 5000
 
-let urlEncodedParser = bodyParser.urlencoded({extended: false});
+let urlEncodedParser = express.urlencoded({extended: false});
 
 let app = express();
 
