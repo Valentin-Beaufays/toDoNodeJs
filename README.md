@@ -3,7 +3,7 @@ A to-do list build with node.js
 
 ## Install
 
-run: ```npm install && npm run```
+run: ```npm install && npm start```
 
 ## Dependencies
 * [express](https://www.npmjs.com/package/express "https://www.npmjs.com/package/express") ~4.17.0
