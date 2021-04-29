@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: sanitize-html
+    versions:
+    - 2.3.2
+  - dependency-name: ejs
+    versions:
+    - 3.1.5
